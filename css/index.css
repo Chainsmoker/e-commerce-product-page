@@ -1,0 +1,350 @@
+/*
+# Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Orange: hsl(26, 100%, 55%)
+- Pale orange: hsl(25, 100%, 94%)
+
+### Neutral
+
+- Very vark blue: hsl(220, 13%, 13%)
+- Dark grayish blue: hsl(219, 9%, 45%)
+- Grayish blue: hsl(220, 14%, 75%)
+- Light grayish blue: hsl(223, 64%, 98%)
+- White: hsl(0, 0%, 100%)
+- Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px
+
+### Font
+
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --orange: hsl(26, 100%, 55%);
+    --pale-orange: hsl(25, 100%, 94%);
+
+    --very-vark-blue: hsl(220, 13%, 13%);
+    --dark-grayish-blue: hsl(219, 9%, 45%);
+    --grayish-blue: hsl(220, 14%, 75%);
+    --light-grayish-blue: hsl(223, 64%, 98%);
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--grayish-blue);
+    font-weight: bold;
+}
+
+aside {
+    background-color: var(--light-grayish-blue);
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    gap: 100px;
+    top: 0;
+    transform: translateX(-100%);
+    gap: 50px;
+    transition: transform .3s;
+}
+
+#btnAbrir {
+    display: none;
+}
+
+.slideshow {
+    background-color: rgba(0, 0, 0, 0.678);
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+.slideshow__botones {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 70px;
+    width: 43%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slideshow__botones img {
+    background-color: var(--white);
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+
+.slideshow__item img {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
+
+.slideshow__item {
+    width: 50%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.slideshow__item img:nth-last-child(2) {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 20px;
+}
+
+.slideshow__contenido__item__mas__imagen {
+    width: 40%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.slideshow__contenido__item__mas__imagen img {
+    border-radius: 15px;
+}
+
+nav {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+    box-shadow: 0px 15px 10px -19px var(--grayish-blue)  
+}
+
+.nav__item {
+    display: flex;
+    gap: 30px;
+}
+
+.nav__item:last-child {
+    height: 40%;
+}
+
+.nav__item img:first-child {
+    height: 40px;
+    width: 40px;
+}
+
+.contenido {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.contenido__item {
+    flex-basis: 500px;
+}
+
+.contenido__item__imagen {
+    height: 70%;
+}
+
+.contenido__item__imagen img {
+    border-radius: 15px;
+}
+
+.contenido__item__mas__imagen {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.contenido__item__mas__imagen img {
+    max-width: 20%;
+    border-radius: 15px;
+}
+
+.contenido__item__mas__imagen img:first-child {
+    opacity: .5;
+    border: 2px solid var(--orange);
+}
+
+.contenido__item:last-child {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contenido__item h3 {
+    color: var(--orange);
+    letter-spacing: 6px;
+}
+
+.contenido__item h1 {
+    font-size: 2.5rem;
+}
+
+.contenido__item p {
+    color: var(--dark-grayish-blue);
+}
+
+.contenido__precios {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 50%;
+}
+
+.contenido__precios span {
+    margin-left: 20px;
+    color: var(--orange);
+    background-color: var(--light-grayish-blue);
+    padding: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.contenido__add__cart {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contenido__add__card__item {
+    flex-basis: 200px;
+    height: 40px;
+}
+
+.contenido__add__card__item:first-child {
+    background-color: var(--light-grayish-blue);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contenido__add__card__item img {
+    width: 7%;
+    height: 30%;
+}
+
+.contenido__add__cart button {
+    width: 100%;
+    height: 100%;
+    background-color: var(--orange);
+    border: none;
+    border-radius: 10px;
+    color: var(--white);
+    font-weight: bold;
+}
+
+@media (max-width: 620px) {
+    .slideshow {
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+        display: flex;
+    }
+
+    .slideshow__item {
+        width: 100%;
+    }
+
+    .slideshow__botones {
+        width: 90%;
+    }
+
+    #btnAbrir {
+        display: block;
+    }
+
+    nav {
+        background-color: var(--white);
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        justify-content: space-around;
+        z-index: 20;
+    }
+
+    .nav__item a:not(img), .contenido__item__imagen, .contenido__item__mas__imagen, .slideshow__contenido__item__mas__imagen {
+        display: none;
+    }
+
+    .contenido__item__imagen {
+        text-align: center;
+    }
+
+    .contenido__item:last-child {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contenido__precios {
+        width: 100%;
+    }
+
+    .contenido__precios p {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .contenido__add__card__item {
+        flex-grow: 1;
+    }
+}
+
+.translate {
+    transform: translateX(0%);
+}
